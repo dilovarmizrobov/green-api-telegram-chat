@@ -1,0 +1,261 @@
+.window {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 64px;
+  padding: 8px 16px;
+  background: var(--background-primary);
+  border-bottom: 1px solid var(--stroke-tertiary);
+}
+
+.back {
+  display: none;
+  width: 36px;
+  height: 36px;
+  place-items: center;
+  margin-left: -8px;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--accent);
+}
+
+@media (max-width: 720px) {
+  .back {
+    display: grid;
+  }
+}
+
+.headerText {
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.name {
+  margin: 0;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.subtitle {
+  font-size: 13px;
+  line-height: 16px;
+  color: var(--text-tertiary);
+}
+
+.messages {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.messagesInner {
+  width: 100%;
+  max-width: 791px;
+  margin: auto auto 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 16px 16px 8px;
+}
+
+.emptyChat {
+  margin: auto;
+  padding: 16px 24px;
+  border-radius: var(--radius-l);
+  background: var(--background-primary);
+  text-align: center;
+}
+
+.emptyChat p {
+  margin: 0 0 4px;
+  font-weight: 600;
+}
+
+.emptyChat span {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.day {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  margin: 8px 0;
+}
+
+.day span {
+  padding: 2px 10px;
+  border-radius: 12px;
+  background: var(--background-primary);
+  color: var(--text-secondary);
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.row {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.rowOut {
+  justify-content: flex-end;
+}
+
+.bubble {
+  position: relative;
+  max-width: min(75%, 520px);
+  padding: 7px 12px 7px;
+  border-radius: 18px;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+  animation: appear 0.15s ease-out;
+}
+
+.bubbleIn {
+  background: var(--bubble-in);
+  border-bottom-left-radius: 6px;
+}
+
+.bubbleOut {
+  background: var(--bubble-out);
+  border-bottom-right-radius: 6px;
+}
+
+.text {
+  white-space: pre-wrap;
+}
+
+.meta {
+  float: right;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin: 6px 0 -4px 10px;
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--bubble-meta);
+}
+
+.statusIcon {
+  width: 14px;
+  height: 14px;
+}
+
+.retry {
+  width: 28px;
+  height: 28px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--negative);
+}
+
+.retry:hover {
+  background: var(--background-tertiary);
+}
+
+.retry svg {
+  width: 22px;
+  height: 22px;
+}
+
+.errorText {
+  align-self: flex-end;
+  max-width: min(75%, 520px);
+  margin: 0 34px 4px 0;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: right;
+  color: var(--negative);
+}
+
+.retryLink {
+  padding: 0;
+  border: none;
+  background: none;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.retryLink:hover {
+  text-decoration: underline;
+}
+
+.composer {
+  display: flex;
+  align-items: flex-end;
+  gap: 8px;
+  width: 100%;
+  max-width: 823px;
+  margin: 0 auto;
+  padding: 8px 16px 16px;
+}
+
+.textarea {
+  flex: 1;
+  min-height: 44px;
+  max-height: 160px;
+  padding: 12px 16px;
+  border: none;
+  border-radius: 22px;
+  background: var(--background-primary);
+  line-height: 20px;
+  resize: none;
+  outline: none;
+  box-shadow: 0 1px 2px #0000000f;
+}
+
+.textarea::placeholder {
+  color: var(--text-tertiary);
+}
+
+.send {
+  width: 44px;
+  height: 44px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #fff;
+  transition: background 0.15s, transform 0.15s;
+}
+
+.send:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.send:disabled {
+  background: var(--background-primary);
+  color: var(--text-tertiary);
+}
+
+@keyframes appear {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+}

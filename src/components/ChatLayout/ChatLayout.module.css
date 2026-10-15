@@ -1,0 +1,125 @@
+.layout {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 72px 360px 1fr;
+  background: var(--background-surface);
+}
+
+.rail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 0;
+  background: var(--background-surface);
+}
+
+.railButton {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: var(--radius-m);
+  background: transparent;
+  color: var(--text-tertiary);
+  transition: background 0.15s, color 0.15s;
+}
+
+.railButton:hover {
+  background: var(--background-tertiary);
+  color: var(--text-primary);
+}
+
+.railButtonActive {
+  color: var(--accent);
+}
+
+.railBadge {
+  position: absolute;
+  top: 4px;
+  right: 2px;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 9px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 18px;
+}
+
+.logout {
+  margin-top: auto;
+}
+
+.logout:hover {
+  color: var(--negative);
+}
+
+.sidebar {
+  min-width: 0;
+  min-height: 0;
+  margin: 8px 0 8px;
+  border-radius: var(--radius-l) 0 0 var(--radius-l);
+  background: var(--background-primary);
+  border-right: 1px solid var(--stroke-tertiary);
+  overflow: hidden;
+}
+
+.main {
+  min-width: 0;
+  min-height: 0;
+  margin: 8px 8px 8px 0;
+  border-radius: 0 var(--radius-l) var(--radius-l) 0;
+  background: var(--chat-background);
+  overflow: hidden;
+}
+
+.placeholder {
+  height: 100%;
+  display: grid;
+  place-items: center;
+}
+
+.placeholder span {
+  padding: 4px 12px;
+  border-radius: 12px;
+  background: var(--background-primary);
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+@media (max-width: 960px) {
+  .layout {
+    grid-template-columns: 72px 300px 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .rail {
+    display: none;
+  }
+
+  .sidebar,
+  .main {
+    margin: 0;
+    border-radius: 0;
+    border: none;
+  }
+
+  .main,
+  .chatOpen .sidebar {
+    display: none;
+  }
+
+  .chatOpen .main {
+    display: block;
+  }
+}

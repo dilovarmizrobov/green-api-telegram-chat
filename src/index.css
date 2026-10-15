@@ -1,0 +1,102 @@
+:root {
+  color-scheme: light;
+  --background-primary: #fff;
+  --background-secondary: #f5f7fa;
+  --background-surface: #edeef2;
+  --background-tertiary: #0909090d;
+  --background-hover: #0909090a;
+  --background-active: #007aff1a;
+  --text-primary: #060708;
+  --text-secondary: #060708ad;
+  --text-tertiary: #06070885;
+  --text-inverse: #fff;
+  --stroke-tertiary: #9da4ac4d;
+  --accent: #007aff;
+  --accent-hover: #479fff;
+  --accent-pressed: #006ee5;
+  --accent-disabled: #007aff7a;
+  --negative: #ff303c;
+  --positive: #1abe43;
+  --bubble-in: #fff;
+  --bubble-out: #d6e9ff;
+  --bubble-meta: #06070885;
+  --chat-background: #edeef2;
+  --shadow-card: 0 1px 2px #0000000f, 0 4px 24px #00000014;
+  --radius-l: 16px;
+  --radius-m: 12px;
+  --font: -apple-system, system-ui, Roboto, Avenir, Helvetica, Arial, sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color-scheme: dark;
+    --background-primary: #17181c;
+    --background-secondary: #25262d;
+    --background-surface: #0f0f12;
+    --background-tertiary: #ffffff17;
+    --background-hover: #ffffff0d;
+    --background-active: #007aff2e;
+    --text-primary: #fff;
+    --text-secondary: #fffc;
+    --text-tertiary: #ffffffa3;
+    --stroke-tertiary: #ffffff29;
+    --negative: #ff444f;
+    --positive: #2bc644;
+    --bubble-in: #25262d;
+    --bubble-out: #0f4c99;
+    --bubble-meta: #ffffffa3;
+    --chat-background: #0f0f12;
+    --shadow-card: 0 4px 24px #00000066;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: var(--font);
+  font-size: 15px;
+  line-height: 20px;
+  color: var(--text-primary);
+  background: var(--background-surface);
+  -webkit-font-smoothing: antialiased;
+}
+
+button,
+input,
+textarea {
+  font: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--stroke-tertiary);
+  border-radius: 3px;
+}
